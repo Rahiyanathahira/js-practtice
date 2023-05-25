@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //data types
+      // premitive
+      var m = 10;
+      var abc = 10;
+      typeof a;
+      var name1 = "hello";
+      typeof name1;
+      console.log(name1 + "is 24 year old");
+      console.log(`${name1} IS 24`);
+      //true 1 -1 ""
+      //false 0 null undefined NaN
+      //null undefined
+      var b = null;
+
+      //symbol - used for creating unique properties of object
+
+      //nonpremitive
+      //object-a collection of key and value pairs
+      // 2 ways of creating object 1. object literal
+      var obj2 = {
+        name2: "jhon",
+        sn: 10,
+        singName: function () {
+          console.log(this.name2 + this.sn);
+        },
+      };
+      console.log(obj2.name2);
+      obj2.singName();
+      //object comparison
+      //JSON.stringify
+      //+0 == -0 :true
+      //Object.is(+0,-0) :false
+      //NaN == NaN : false
+      //Object.is(NaN,NaN) : true
+
+      var arr = [1, 2, 3, 4, 5, 5, 7];
+      console.log(arr[2]);
+      var arr1 = [3, 4, 5, , 6];
+      console.log(arr1[3]); //output:undefined
+
+      typeof arr; //object
+    </script>
+  </head>
+  <body>
+    <script></script>
+  </body>
+</html>

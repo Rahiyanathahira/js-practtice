@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script>
+      //map: to create of the array with some manipulation
+      //forEach can be used but it needs an extra push function for explicitly adding in new array.
+      const add = (x, y) => x + y; //pure function
+      add(2, 3);
+
+      let x = 2; //impure every time output change
+      const addd = (y) => {
+        return (x += y);
+      };
+
+      let arr = [1, 2, 3, 4];
+      let newarr = arr.map((num) => num * 2);
+      console.log(newarr);
+
+      //filter - used to filter the array as per condition
+
+      let array = [1, 2, 3, 4];
+      let newarray = array.filter((num) => num > 2);
+      console.log(newarray);
+
+      //reduce- can be used to combine filter and map
+      let arry1 = [3, 4, 5, 6, 7];
+      let reducearray = arry1.reduce((acc, num) => acc + num, 100);
+      console.log(reducearray);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="ido"></p>
+    <button onclick="btnfun('jhon')">click me</button>
+    <script>
+      let person = {
+        age: 30,
+        firstName: "jhon",
+        lastName: "smith",
+        fullName: function () {
+          return this.firstName + " " + this.lastName;
+        },
+      };
+      console.log(person.fullName());
+      console.log(person.age);
+      console.log(person["firstName"]);
+      function btnfun(name) {
+        alert("hello" + name);
+      }
+      let s = "vghigfcxhj dfyuiugfcvh";
+      console.log(s.length);
+      console.log(s.slice(2, 3));
+      console.log(s.slice(-7));
+      console.log(s.substring(2, 3));
+      console.log(s.substr(2, 3));
+      let x = "  micro soft";
+      let y = "ms office";
+      console.log(x.replace("soft", "SOFT"));
+      console.log(x.concat(" " + y));
+      console.log(x.toUpperCase());
+      console.log(y.toLowerCase());
+      console.log(s.trim());
+      console.log(s.trimStart());
+      let z = "xy yz cs";
+      console.log(z.padStart(4, "y"));
+      console.log(z.charAt(0));
+      console.log(z.charCodeAt(0));
+      //console.log(z.lastIndexOf());
+      console.log(z.match("cs"));
+    </script>
+  </body>
+</html>

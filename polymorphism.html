@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //polymorphism
+      //when we have something in multiple forms
+      //overloading
+      //it will allow you to have some function name but it will consider only the last implementation of the functiion
+
+      class OBjName {
+        constructor(color) {
+          this.color = color;
+        }
+
+        print(size) {
+          console.log(size);
+        }
+        print() {
+          console.log("hello");
+        }
+        print(s1, s2) {
+          console.log(s1 + s2);
+        }
+      }
+      let OBj = new OBjName("red");
+      OBj.print(10);
+      OBj.print();
+      OBj.print(12, 12);
+
+      //overriding
+      //runtime polymorphism
+      //child class wants to override parents method wants to give its own implementation that it can do that by having exactly the same signature with its implementation.
+      class Parent4 {
+        live() {
+          console.log("Iran");
+        }
+      }
+      class Child4 extends Parent4 {
+        live() {
+          console.log("India");
+        }
+      }
+      var ob4 = new Child4();
+      ob4.live();
+    </script>
+  </body>
+</html>

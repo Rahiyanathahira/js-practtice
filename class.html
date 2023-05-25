@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // oops - makes development easy
+      //Encapsulation-wrapping of data and function  (prpertirs and function of object are placed together)
+      //new-memory located for this variable
+      //constructor is used to allocate memory-new keyword:calls the constructoe
+      class Box {
+        constructor(length) {
+          this.length = length;
+          console.log("construction called");
+        }
+        display() {
+          console.log(this);
+        }
+      }
+      let obj = new Box(20);
+      obj.display();
+
+      // Abstaction -hiding un-neccessary info
+      //protypical inheritance
+      //allow one object to access properties of some other object
+      //obj__proto__;
+      //obFun.__proto__.__proto__  result null
+      let father = {
+        name: "jhon",
+      };
+      let son = Object.create(father);
+      console.log(father.isPrototypeOf(son));
+
+      var parent = {
+        name: "Father",
+        sign() {
+          console.log("singing");
+        },
+        eat: function () {
+          console.log("eating");
+          drink: () => {
+            console.log("drinking");
+          };
+        },
+      };
+
+      var child = {
+        name: "Son",
+        eat() {
+          console.log("eating");
+        },
+      };
+      child._proto__ = parent;
+      for (let p in child) {
+        console.log(p + "" + child.hasOwnProperty(p));
+      }
+    </script>
+  </body>
+</html>

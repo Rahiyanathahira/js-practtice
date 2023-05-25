@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Function-enables reusability of it as and when required
+      //using funtion key , function expression
+      //function is fully hoisted
+      myName();
+      function myName() {
+        console.log("jhon....");
+      }
+
+      var a = 40;
+      function add(a, b) {
+        var a = 10;
+        return a + b;
+      }
+      add(3, 6);
+      console.log(a);
+
+      //functin expression
+      var print = function () {
+        console.log("awesome");
+      };
+      print();
+
+      //immediately invoked function expression
+      (function (m, n) {
+        return m * n;
+      })(4, 4);
+
+      //methods of function
+      //call() bind() apply
+      //call and apply can be used to borrow methods of another object
+      function newFun() {
+        console.log("hello");
+      }
+      newFun.call();
+      newFun.apply();
+
+      let animal = {
+        fname: "dog",
+        eat(a, b) {
+          console.log(this.fname + "is eating" + a + "" + b);
+        },
+      };
+
+      let human = {
+        fname: "Ravi",
+      };
+      animal.eat(5, "bones");
+      animal.eat.call(human, 10, "banana");
+      animal.eat.apply(human, [10, "chips"]);
+
+      //bind returns the function that can be used later
+      let human_eat = animal.eat.bind(human);
+      human_eat(20, "chocolate");
+
+      // this keyword
+      //this is a object whose proerty is a function
+      //this given excess of object to its methods
+      let obj3 = {
+        name3: "mike",
+        lName: function () {
+          console.log("hello" + this.name3);
+        },
+      };
+      obj3.lName();
+
+      //ARROW FUNCTION
+      let obFun = {
+        prnt: function () {
+          console.log("a", this); //refer to object
+          var an_prnt = function () {
+            console.log("b", this); //refers to window object
+          };
+          an_prnt();
+        },
+      };
+      obFun.prnt();
+
+      //bound the function to the object
+
+      let obFun1 = {
+        prnt: function () {
+          console.log("a", this); //refer to object
+          var an_prnt = () => {
+            console.log("b", this); //refers to window object
+          };
+          an_prnt();
+        },
+      };
+      obFun1.prnt();
+
+      //higher Order function
+      //function either take function as an argument or return function as an argument
+      //setInterval
+      setInterval(print, 1000);
+      clearInterval(1);
+      function canVote(age) {
+        return age >= 18 ? "true" : "false";
+      }
+      function canDrive(age) {
+        return age >= 16;
+      }
+      function canMarry(age) {
+        return age >= 21;
+      }
+      console.log(canDrive(11));
+      console.log(canMarry(30));
+      console.log(canVote(10));
+
+      function age_req(r_age) {
+        return function (age) {
+          return age >= r_age;
+        };
+      }
+      let can_Vote = age_req(18);
+      console.log(age_req(18)(27));
+      console.log(age_req(16)(27));
+      console.log(age_req(21)(27));
+    </script>
+  </body>
+</html>

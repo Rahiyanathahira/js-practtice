@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //promise can have 3 states 1)fulfilled 2)Rejected 3)Pending.
+      const promise = new Promise((resolve, reject) => {
+        if (true) {
+          resolve("it worked!");
+        } else {
+          reject("it broked!");
+        }
+      });
+      promise.then((result) => result + "!");
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Exception Handlig
+      //Exception is a n abnormal condition that may happend runtime and distrub the flow of the program.
+      //try / catch / throw / finally
+      try {
+        console.log(ax);
+        console.log("hi bye");
+      } catch (error) {
+        //console.log("k");
+        console.log("we got an error");
+      }
+      //throw-js engine will not throw the exception but our application wants to consider it as an exception.
+      function a(age) {
+        if (age < 16) {
+          try {
+            throw new Error("You are under age");
+          } catch {
+            console.log(error);
+          } finally {
+            console.log("program ended");
+          }
+        } else {
+          console.log("You can vote");
+        }
+      }
+      //finally-it contains the code that no matter what will get executed
+    </script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //  closure-when function gets called it is popped
+      //  out of the stack but still all the arguments are stored in closure which are linked in sub function.
+      // function parent() {
+      //   console.log("hello");
+      //   var x=10;
+      //   function child() {
+      //     console.log(x+2);
+      //   }
+      //   return child;
+      // }
+
+      let f1 = (gf) => (father) => (son) =>
+        console.log(`$(gf)--$(father)--$(son)`);
+
+      //-------------
+
+      //Advanced Functon -currying
+      //transformation of function that translates a function from callable as f(a,b,c) into callable as f(a)(b)(c)
+      let add = function (x) {
+        return function (y) {
+          console.log(x + y);
+        };
+      };
+      let addby5 = add(5);
+      addby5(2);
+      addby5(10);
+
+      let mul = function (x, y) {
+        console.log(x + y);
+      };
+      let mulBy10 = mul.bind(this, 10);
+      mulBy10(7);
+      mulBy10(8);
+      mulBy10(9);
+
+      let multy = (x) => (y) => console.log(x * y);
+      let multy10 = multy(10);
+
+      multy10(8);
+      multy10(9);
+      multy10(10);
+
+      //Advanced Function - Composition
+      //combining multiple simple function to build a more complicated one.
+
+      //closer
+      function multiply2(x) {
+        return function (y) {
+          console.log(x * y);
+        };
+      }
+      let mutiplyByFour = multiply2(4);
+      mutiplyByFour(2);
+    </script>
+  </body>
+</html>

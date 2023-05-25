@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //inheritance
+      // extend keyword is used to inheritance from another class
+      class Fruits {
+        constructor(color, no_of_item) {
+          console.log("parent constructor");
+        }
+      }
+      class Apples extends Fruits {
+        contructor() {
+          // super();//to call the contructor of the parent class
+          console.log("child icon");
+        }
+      }
+      let obj3a = new Apples();
+
+      //---------------------
+      class Fruit {
+        constructor(color) {
+          this.color = color;
+        }
+        print() {
+          console.log(this);
+        }
+      }
+      class Apple extends Fruit {
+        constructor(color, type) {
+          super(color);
+          this.type = type;
+        }
+        print() {
+          super.print(this);
+        }
+      }
+      let object = new Apple("red", "apple");
+      object.print();
+      let objects = new Fruits("red");
+      // objects.print();
+      //super keyword can be used to call parent class constructor
+    </script>
+  </body>
+</html>
